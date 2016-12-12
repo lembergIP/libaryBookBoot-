@@ -1,0 +1,21 @@
+img {
+    background: #eaeaed;
+    border: 1px solid #9799a7;
+    float: left;
+    margin: 8px 0 0 20px;
+    padding: 4px;
+    width: 200px;
+}
+div.bookConteiner{
+    background-color: azure;
+    padding: 10%;
+    margin: 10% 30% 15%;
+}
+body{
+    background-color: #C8C8C8;
+
+}
+div#modal1{
+    margin-top: 10%;
+    width: 30%;
+}

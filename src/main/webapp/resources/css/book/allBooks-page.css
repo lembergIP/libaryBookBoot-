@@ -1,0 +1,94 @@
+/* Remove the navbar's default rounded borders and increase the bottom margin */
+.navbar {
+    margin-bottom: 20px;
+    border-radius: 0;
+    font-family: cursive;
+}
+
+/* Remove the jumbotron's default bottom margin */
+.jumbotron {
+    margin-bottom: 0;
+    background-color: goldenrod;
+height: auto;
+    font-family: cursive;
+}
+/* Add a gray background color and some padding to the footer */
+footer {
+    background-color: #f2f2f2;
+    padding: 25px;
+    font-family: cursive;
+}
+div#colapseGenre{
+   max-width: 200px;
+    float: left;
+margin-right: 5%;
+    margin-left: 2%;
+}
+button#buttonGenre{
+    width: 200px;
+    font-family: cursive;
+
+}
+div#colapseLetter{
+margin-bottom: 2%;
+}
+button#btnletter{
+    background-color: black;
+    font-family: cursive;
+}
+/*div#menuBook{
+    margin: 50px;
+    height: 200px;
+    width: 200px;
+}*/
+div#Photo{
+    max-height: 400px;
+    max-width: 400px;
+}
+div#panelBody{
+    width: 250px;
+    height: 200px;
+}
+div#findBy{
+
+}
+
+.button#btnSearch{
+    background-color: black;
+    color: goldenrod;
+}
+.button#deleteBook{
+    float: right;
+}
+.button#btnMoreInfo{
+   background-position: right;
+    font-family: cursive;
+}
+.button#btnEditBook{
+    background-position: left;
+    font-family: cursive;
+
+}
+div#Photo{
+    float: left;
+    width: 400px;
+    height: 250px;
+}
+div#BookInfo{
+    border-left: 2px solid silver;
+    width: 40%;
+    margin-left: 400px;
+    height: 250px;
+    padding-left: 50px;
+
+}
+li{
+    color: black;
+
+}
+strong{
+    font-family: cursive;
+}
+div#btnMenu{
+    font-family: cursive;
+}
