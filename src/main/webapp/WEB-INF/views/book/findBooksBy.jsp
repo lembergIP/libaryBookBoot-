@@ -50,7 +50,6 @@
             <ul class="nav navbar-nav">
                 <li class="active"><a href="#">Home</a></li>
                 <li><a href="allBooks">All Books</a></li>
-                <li><a href="#" >All Users</a></li>
                 <li><a href="adm-createBook" ><span class="glyphicon glyphicon-plus"></span> Book</a></li>
                 <li><a href="#colapseGenre" data-toggle="collapse">Genre</a></li>
                 <li><a href="#colapseLetter" data-toggle="collapse">Letters</a></li>

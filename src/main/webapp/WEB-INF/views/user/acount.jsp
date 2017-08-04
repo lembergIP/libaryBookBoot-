@@ -50,10 +50,7 @@
             <ul class="nav navbar-nav">
                 <li class="active"><a href="#">Home</a></li>
                 <li><a href="allBooks">All Books</a></li>
-                <li><a href="#" >All Users</a></li>
                 <li><a href="adm-createBook" ><span class="glyphicon glyphicon-plus"></span> Book</a></li>
-                <li><a href="#colapseGenre" data-toggle="collapse">Genre</a></li>
-                <li><a href="#colapseLetter" data-toggle="collapse">Letters</a></li>
                 <li><a href="#divSearch" data-toggle="collapse">Search <span class="glyphicon glyphicon-search"></span></a></li>
 
             </ul>
@@ -64,29 +61,11 @@
         </div>
     </div>
 </nav>
-<div class="collapse text-center" id="colapseLetter">
 
-    <c:forEach items="${letter}" var="letter">
-        <a href="findBooksByLetter${letter}"> <button type="button" class="btn btn-warning" id="btnletter">${letter}</button></a>
-
-    </c:forEach>
-
-</div>
 
 
 <br>
 
-<div class="collapse collapse-styled" id="colapseGenre">
-    <div>
-
-        <c:forEach items="${genreList}" var="genre">
-            <a href="findBooksByGenre${genre}">
-                <button type="button" class="btn btn-warning" id="buttonGenre">${genre}</button>
-            </a>
-        </c:forEach>
-
-    </div>
-</div>
 
 
 <br>
