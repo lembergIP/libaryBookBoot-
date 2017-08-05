@@ -12,7 +12,7 @@ import ua.lvivl.libary.service.BookService;
 import java.util.ArrayList;
 
 /**
- * Created by lembergIP on 18.11.2016.
+ * load all books by @PathVariable genre
  */
 @Controller
 @RequestMapping(value = "/findBooksByGenre{genre}")

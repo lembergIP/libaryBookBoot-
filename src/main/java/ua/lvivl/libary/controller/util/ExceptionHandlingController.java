@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 /**
- * Created by lembergIP on 05.12.2016.
+ * Exeptions pages
  */
 @ControllerAdvice
 public class ExceptionHandlingController {

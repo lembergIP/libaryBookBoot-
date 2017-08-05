@@ -16,9 +16,6 @@ import java.util.List;
 import java.util.Set;
 
 
-/**
- * Created by lembergIP on 17.10.2016.
- */
 @Entity
 @Table(name=UserConstants.Entity.TABLE_NAME_USER)
 @Data
@@ -27,7 +24,7 @@ public class User implements Serializable {
     @Id
     @GeneratedValue
     @Column(name = UserConstants.Entity.ID_USER)
-    private Long id_user;
+    private Long id;
 
     @Column(name = UserConstants.Entity.EMAIL,unique = true)
     @Size(min = 5,max = 25,message = ValidationConstans.VALIDATOR_EMAIL)

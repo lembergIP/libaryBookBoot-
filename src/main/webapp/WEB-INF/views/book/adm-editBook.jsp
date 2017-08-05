@@ -1,10 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: lembergIP
-  Date: 09.11.2016
-  Time: 12:22
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
@@ -28,9 +22,9 @@
 <div class="row">
     <div class="col-sm-5" id="div1">
         <div id="Photo">
-            <img class="img-thumbnail" id="BookPicture" alt="Book picture" src="imageBook/${book.id_book}" width="220" height="220" />
+            <img class="img-thumbnail" id="BookPicture" alt="Book picture" src="imageBook/${book.id}" width="220" height="220" />
         </div>
-        <form  method="POST" action="adm-editBook${book.id_book}/updateBookImage${book.id_book}" enctype="multipart/form-data" >
+        <form  method="POST" action="adm-editBook${book.id}/updateBookImage${book.id}" enctype="multipart/form-data" >
             <input type="file" name="file" accept=".png, .jpg, .jpeg">
             <input type="submit" class="btn btn-warning" value="CHANGE IMAGE" style="margin-top: 30px;margin-left: 100px">
             <form:errors path="file" cssClass="error" />
@@ -44,7 +38,7 @@
         </div>
 <div>
 <h4>LOAD OR UPDATE CONTENT(PDF ONLY) :</h4>
-    <form id="contentBook" method="POST" action="adm-editBook${book.id_book}/updateBookContent${book.id_book }" enctype="multipart/form-data" >
+    <form id="contentBook" method="POST" action="adm-editBook${book.id}/updateBookContent${book.id }" enctype="multipart/form-data" >
         <input type="file" name="file" accept="application/pdf">
         <input type="submit" class="btn btn-danger" value="LOAD CONTENT" style="margin-top: 30px;margin-left: 100px">
         <form:errors path="file" cssClass="error" />
@@ -55,14 +49,14 @@
     </div>
     <div class="col-sm-7" id="div2" >
 
-        <form  action="adm-editBook${book.id_book}/updateBookInfo${book.id_book}" method="post">
+        <form  action="adm-editBook${book.id}/updateBookInfo${book.id}" method="post">
                 <div class="form-group">
                     <label for="name">BOOK NAME</label>
-                    <input class="form-control input-lg" type="text" id="name" name="name" value="${book.name }">
+                    <input class="form-control input-lg" type="text" id="name" name="name" value="${book.name}" required="required">
                 </div>
                 <div class="form-group">
                     <label for="fio">AUTHOR</label>
-                    <input class="form-control input-lg" type="text" id="fio" name="fio" value=${book.author.fio}>
+                    <input class="form-control input-lg" type="text" id="fio" name="fio" value=${book.author.fio} required="required">
                 </div>
                 <div class="form-group">
                     <label for="ganre">SELECT GANRE BOOK</label>
@@ -76,15 +70,15 @@
                 </div>
                 <div class="form-group">
                     <label for="publisher">PUBLISHER</label>
-                    <input class="form-control" type="text" id="publisher" name="publisher" value="${book.publisher.name }">
+                    <input class="form-control" type="text" id="publisher" name="publisher" value="${book.publisher.name } required="required"">
                 </div>
                 <div class="form-group">
                     <label for="pageCount">PAGE COUNT</label>
-                    <input class="form-control" type="number" id="pageCount" name="pageCount" value="${book.pageCount }">
+                    <input class="form-control" type="number" id="pageCount" name="pageCount" value="${book.pageCount } required="required"">
                 </div>
                 <div class="form-group">
                     <label for="publishYear">PUBLISH YEAR</label>
-                    <input class="form-control" type="number" min="500" max="2100" id="publishYear" name="publishYear" value="${book.yearPublish }">
+                    <input class="form-control" type="number" min="500" max="2100" id="publishYear" name="publishYear" value="${book.yearPublish } required="required"">
                 </div>
             <hr>
             <button type="submit" class="btn btn-success" style="margin-top: 30px;margin-left: 200px">Update</button>
@@ -100,36 +94,3 @@
 
 </body>
 </html>
-<%--<label for="fname">BOOK NAME</label>
-
-<input type="text" id="fname" name="nameBook" value="${book.name }">
-</br>
-<label for="lname">AUTHOR</label>
-</br>
-<input type="text" id="lname" name="fio" value=${book.author.fio}>
-</br>
-<label for="ganre">GENRE</label>
-</br>
-<select id="ganre" name="genre">
-    <c:forEach items="${genreList}" var="genre">
-
-        <option value="${genre}">${genre}</option>
-
-    </c:forEach>
-
-</select>
-</br>
-<label for="publisher">PUBLISHER</label>
-</br>
-<input type="text" id="publisher" name="publisher" value="${book.publisher.name }">
-</br>
-<label for="pageCount">PAGE COUNT</label>
-</br>
-<input type="number" id="pageCount" name="pageCount" value="${book.pageCount }">
-</br>
-<label for="publishYear">PUBLISH YEAR</label>
-</br>
-<input type="number" min="500" max="2100" id="publishYear" name="publishYear" value="${book.yearPublish }">
-<hr>
-<button type="submit" class="btn btn-success" style="margin-top: 30px;margin-left: 200px">Update</button>
- --%>

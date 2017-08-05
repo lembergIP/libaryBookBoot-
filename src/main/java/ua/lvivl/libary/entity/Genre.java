@@ -1,8 +1,6 @@
 package ua.lvivl.libary.entity;
 
-/**
- * Created by lembergIP on 17.10.2016.
- */
+
 public enum Genre {
 
 ADVENTURES("ADVENTURES"),

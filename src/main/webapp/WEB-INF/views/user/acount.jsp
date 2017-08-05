@@ -73,7 +73,7 @@
 
 
 <div class="container" id="acount" style="background-color: #9799a7;padding: 2%;width: 35%;font-family: cursive;">
-    <form  action="#" method="post">
+    <form  action="updateUser${user.id}" method="post">
         <div class="form-group">
             <h1> <span class="glyphicon glyphicon-user"></span> My Acount Info :</h1>
             <hr>

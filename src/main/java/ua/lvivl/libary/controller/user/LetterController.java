@@ -10,7 +10,7 @@ import ua.lvivl.libary.constants.BookConstans;
 import ua.lvivl.libary.service.BookService;
 
 /**
- * Created by lembergIP on 19.11.2016.
+ * Finds all the books for a given @PathVariable letter
  */
 @Controller
 @RequestMapping(value = "/findBooksByLetter{letter}")

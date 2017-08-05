@@ -9,7 +9,7 @@ import org.springframework.web.servlet.ModelAndView;
 import ua.lvivl.libary.service.BookService;
 
 /**
- * Created by lembergIP on 17.11.2016.
+ * Delete book by @PathVariable book id
  */
 @Controller
 @RequestMapping(value = "adm-deleteBook{bookId}")

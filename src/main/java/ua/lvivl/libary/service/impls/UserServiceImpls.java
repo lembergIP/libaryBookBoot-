@@ -16,9 +16,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-/**
- * Created by lembergIP on 18.10.2016.
- */
+
 @Service("userService")
 public class UserServiceImpls implements UserService {
 
@@ -37,6 +35,9 @@ public class UserServiceImpls implements UserService {
 
 
     }
+    /**
+     * Create user and auto role user
+     */
 @Transactional
     public String createUser(User user, String role) {
         User findUser = findUserByEmail(user.getEmail());
@@ -58,7 +59,9 @@ public class UserServiceImpls implements UserService {
         }
         return "failed";
     }
-
+    /**
+     * delete user by email
+     */
     @Transactional
     public String deleteUser(String email) {
         User user = userRepository.findByEmail(email);
@@ -69,6 +72,9 @@ public class UserServiceImpls implements UserService {
             return "user not found";
         }
     }
+    /**
+     * update user info
+     */
     @Transactional
     public String updateUser(User user) {
         User userFind = userRepository.findByEmail(user.getEmail());
@@ -78,9 +84,23 @@ public class UserServiceImpls implements UserService {
         } else {
             return "user not found";
         }
+
+
     }
-
-
+    /**
+     * Find user by user id
+     */
+    @Transactional
+    public User findUserById(long id){
+        User user=userRepository.findOne(id);
+        if(user!=null){
+            return user;
+        }
+        return new User();
+    }
+    /**
+     * Load all users list
+     */
     @Transactional(readOnly = true)
     public List<User> allUsersList() {
         List<User>list=userRepository.findAll();
@@ -89,10 +109,6 @@ public class UserServiceImpls implements UserService {
         }else {
         return new ArrayList<User>();}
     }
-    public void updatePassword(String email,String password){
-        User user=userRepository.findByEmail(email);
-        user.setPassword(password);
-        userRepository.saveAndFlush(user);
-    }
+
 
 }

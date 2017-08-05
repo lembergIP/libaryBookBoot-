@@ -12,9 +12,7 @@ import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- * Created by lembergIP on 17.10.2016.
- */
+
 @Entity
 @Table(name = BookConstans.Entity.TABLE_NAME_BOOK)
 @Data
@@ -23,7 +21,7 @@ public class Book implements Serializable {
     @Id
     @GeneratedValue
     @Column(name = BookConstans.Entity.ID_BOOK)
-    private Long id_book;
+    private Long id;
 
     @Column(name = BookConstans.Entity.NAME_BOOK)
     @NotNull(message = ValidationConstans.NOT_EMPTY_MESSAGE)

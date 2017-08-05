@@ -10,9 +10,9 @@ import java.util.List;
 public interface BookService {
     List<Book> findBooksByName(String name);
     List<Book> findBooksByAuthor(String author);
-    void createBook(Book book,String genre);
+    void createBook(Book book);
     void deleteBook(long id_book);
-    void updateBook(long id_book,Book book);
+    void updateBook(Book book);
     Book findBookById(long id_book);
     List<Book> allBooksList();
     List<Book> findBooksByGenre(String genre);

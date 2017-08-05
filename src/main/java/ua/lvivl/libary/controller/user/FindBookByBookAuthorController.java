@@ -13,7 +13,7 @@ import ua.lvivl.libary.entity.Genre;
 import ua.lvivl.libary.service.BookService;
 
 /**
- * Created by lembergIP on 19.11.2016.
+ * Search all books by @RequestParam title or author fio
  */
 @Controller
 @RequestMapping(value = "/bookFindBy")

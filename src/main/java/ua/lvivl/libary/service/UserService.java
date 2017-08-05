@@ -16,5 +16,5 @@ public interface UserService {
     String deleteUser(String email);
     String updateUser(User user);
     List<User> allUsersList();
-    void updatePassword(String email,String password);
+    User findUserById(long id);
 }

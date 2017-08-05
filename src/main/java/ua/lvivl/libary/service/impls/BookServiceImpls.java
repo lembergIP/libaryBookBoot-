@@ -21,9 +21,7 @@ import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by lembergIP on 18.10.2016.
- */
+
 @Service("bookService")
 public class BookServiceImpls implements BookService {
 
@@ -36,6 +34,9 @@ public class BookServiceImpls implements BookService {
     @Autowired
     private PublisherRepository publisherRepository;
 
+    /**
+     * Find all books by title name
+     */
     @Transactional
     public List<Book> findBooksByName(String name) {
         List<Book>books=new ArrayList<Book>();
@@ -43,6 +44,9 @@ public class BookServiceImpls implements BookService {
         return books;
     }
 
+    /**
+     * Find all books by author fio
+     */
     @Transactional
     public List<Book> findBooksByAuthor(String author) {
         List<Book>books=new ArrayList<Book>() ;
@@ -54,16 +58,12 @@ public class BookServiceImpls implements BookService {
         return books;
     }
 
-
+    /**
+     * create book
+     */
     @Transactional
-    public void createBook(Book book,String genre) {
+    public void createBook(Book book) {
 
-        for (Genre gen: Genre.values()
-             ) {
-            if(gen.name().equals(genre)){
-                book.setGenre(gen);
-            }
-        }
         File imgEmptyBook = new File("src/main/webapp/resources/images/books/emptyImage.png");
         try (ByteArrayOutputStream baos = new ByteArrayOutputStream(1000)){
             BufferedImage bufferedImage = ImageIO.read(imgEmptyBook);
@@ -78,7 +78,9 @@ public class BookServiceImpls implements BookService {
         bookRepository.save(book);
 
     }
-
+    /**
+     * delete book by book id
+     */
     @Transactional
     public void deleteBook(long id_book) {
             Book book=bookRepository.findOne(id_book);
@@ -86,15 +88,17 @@ public class BookServiceImpls implements BookService {
         }
 
 
-
+    /**
+     * update book
+     */
     @Transactional
-    public void updateBook(long id_book, Book book) {
-        Book bookFind=bookRepository.findOne(id_book);
-        book.setId_book(id_book);
+    public void updateBook( Book book) {
         bookRepository.saveAndFlush(book);
 
     }
-
+    /**
+     * Find book by book id
+     */
     @Transactional
     public Book findBookById(long id_book) {
         return bookRepository.findOne(id_book);
@@ -108,7 +112,9 @@ public class BookServiceImpls implements BookService {
             return books;
 
     }
-
+    /**
+     * Find all books by genre
+     */
     @Transactional(readOnly = true)
     public List<Book> findBooksByGenre(String genre) {
         List<Book>list=new ArrayList<Book>();
@@ -123,7 +129,9 @@ public class BookServiceImpls implements BookService {
 
         return list;
     }
-
+    /**
+     * Find all books by book start letter in title
+     */
     @Transactional
     public List<Book> findBooksByLetter(String letter) {
         List<Book> bookListLetter = new ArrayList<>();
@@ -137,6 +145,9 @@ public class BookServiceImpls implements BookService {
         }
         return bookListLetter;
     }
+    /**
+     * count book size and convert in MB
+     */
     public float contentSize(long book_id){
         float size=0;
         try {

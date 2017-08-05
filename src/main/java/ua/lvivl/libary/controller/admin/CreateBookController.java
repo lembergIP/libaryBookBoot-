@@ -16,7 +16,9 @@ import ua.lvivl.libary.entity.Publisher;
 import ua.lvivl.libary.service.BookService;
 
 /**
- * Created by lembergIP on 28.10.2016.
+ * Security(only admin role can add book)
+ * Create new book by @RequestParam title Book,fio author ,genre,publisher,page count,publish year
+ * and redirect to update page book by id created book
  */
 @Controller
 @RequestMapping(value = "/adm-createBook")
@@ -47,10 +49,10 @@ public class CreateBookController {
         book.setYearPublish(publishYear);
         book.setPublisher(publisher1);
         book.setAuthor(author);
-
-        bookService.createBook(book,genre);
-        System.out.println("added book : " +book.getId_book());
-        ModelAndView modelAndView=new ModelAndView("redirect:/adm-editBook"+book.getId_book());
+        book.setGenre(Genre.valueOf(genre));
+        bookService.createBook(book);
+        System.out.println("added book : " +book.getId());
+        ModelAndView modelAndView=new ModelAndView("redirect:/adm-editBook"+book.getId());
         modelAndView.addObject("bookAddSuccess", ValidationConstans.BOOK_ADDED_SUCCESS);
         return modelAndView;
     }

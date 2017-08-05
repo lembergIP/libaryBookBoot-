@@ -13,9 +13,6 @@ import ua.lvivl.libary.service.UserService;
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- * Created by lembergIP on 18.10.2016.
- */
 @Service(UserConstants.Model.USER_DETAILS_SERVICE)
 public class UserDetailsService implements org.springframework.security.core.userdetails.UserDetailsService{
     @Autowired

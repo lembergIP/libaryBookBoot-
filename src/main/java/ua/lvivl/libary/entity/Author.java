@@ -12,9 +12,7 @@ import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by lembergIP on 17.10.2016.
- */
+
 @Entity
 @Table(name = BookConstans.Entity.TABLE_NAME_AUTHOR)
 @Data
@@ -23,7 +21,7 @@ public class Author{
     @Id
     @GeneratedValue
     @Column(name=BookConstans.Entity.ID_AUTHOR)
-    private Long id_author;
+    private Long id;
 
     @Column(name = BookConstans.Entity.SURNAME_NAME_AUTHOR)
     private String fio;

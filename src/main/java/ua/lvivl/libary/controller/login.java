@@ -15,7 +15,7 @@ import ua.lvivl.libary.entity.User;
 import ua.lvivl.libary.service.UserService;
 
 /**
- * Created by lembergIP on 24.10.2016.
+ * Login page
  */
 @Controller
 public class login {

@@ -10,7 +10,7 @@ import ua.lvivl.libary.entity.Genre;
 import ua.lvivl.libary.service.BookService;
 
 /**
- * Created by lembergIP on 17.11.2016.
+ * load all books
  */
 @Controller
 @RequestMapping(value = "/allBooks")

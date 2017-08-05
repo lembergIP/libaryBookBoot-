@@ -22,7 +22,7 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 
 /**
- * Created by lembergIP on 09.11.2016.
+ * Update book page
  */
 @Controller
 @RequestMapping(value = "/adm-editBook{bookId}")
@@ -37,17 +37,17 @@ public class EditBookController {
     public ModelAndView editBook(@PathVariable("bookId") long bookId){
       //  Long id=Long.parseLong(idBook);
         ModelAndView model=new ModelAndView("book/adm-editBook");
-        String[] findBy={BookConstans.Entity.SEARCH_BY_BOOK,BookConstans.Entity.SEARCH_BY_AUTHOR};
-        model.addObject("findBy",findBy);
-        model.addObject("genreList", Genre.values());
         Book book=bookService.findBookById(bookId);
         model.addObject("book",book);
         model.addObject("bookSizeContent",bookService.contentSize(bookId));
+        model.addObject("genreList", Genre.values());
         System.out.println("size : " +bookService.contentSize(bookId)+" Mb");
         model.addObject("fileUpload", new FileUploadFormObject());
         return model;
     }
-
+    /**
+     * Update book image by @PathVariable book id  and loaded image
+     */
     @RequestMapping(value = "/updateBookImage{bookId}",method = RequestMethod.POST)
     public ModelAndView updateBookImage(@PathVariable("bookId") long bookId,@RequestParam("file") MultipartFile file) {
 
@@ -62,7 +62,7 @@ public class EditBookController {
                     return modelAndView;
                 }
                 book.setImage(bytes);
-                bookService.updateBook(bookId,book);
+                bookService.updateBook(book);
 
             } catch (IOException | JpaSystemException exc) {
               logger.error("Failed to save image", exc);
@@ -71,6 +71,9 @@ public class EditBookController {
         }
         return modelAndView;
     }
+    /**
+     * Update book image by @PathVariable book id  and loaded content(only pdf file)
+     */
     @RequestMapping(value = "/updateBookContent{bookId}",method = RequestMethod.POST)
     public ModelAndView updateContentBook(@PathVariable("bookId") long bookId,@RequestParam("file") MultipartFile file) {
 
@@ -82,7 +85,7 @@ public class EditBookController {
                 byte[] bytes=file.getBytes();
 
                 book.setContent(bytes);
-                bookService.updateBook(bookId,book);
+                bookService.updateBook(book);
 
             } catch (IOException | JpaSystemException exc) {
                 logger.error("Failed to save image", exc);
@@ -94,6 +97,10 @@ public class EditBookController {
         }
         return modelAndView;
     }
+    /**
+     * Update book image by @PathVariable book id  and @PathVariable  title book,fio,ganre,publisher,
+     * page count and publisher year
+     */
     @RequestMapping(value = "/updateBookInfo{bookId}")
     public ModelAndView updateBookInfo(@PathVariable long bookId,@RequestParam String name, @RequestParam String fio,
                                        @RequestParam String ganre, @RequestParam String publisher, @RequestParam int pageCount,
@@ -110,13 +117,8 @@ public class EditBookController {
         book.setYearPublish(publishYear);
         book.setPublisher(publisher1);
         book.setAuthor(author);
-        for (Genre gen:Genre.values()
-             ) {
-            if(gen.equals(ganre)){
-                book.setGenre(gen);
-            }
-        }
-        bookService.updateBook(bookId,book);
+        book.setGenre(Genre.valueOf(ganre));
+        bookService.updateBook(book);
         return modelAndView;
     }
 }

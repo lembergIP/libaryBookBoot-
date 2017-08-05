@@ -7,9 +7,7 @@ import ua.lvivl.libary.constants.ValidationConstans;
 import ua.lvivl.libary.entity.User;
 import ua.lvivl.libary.service.UserService;
 
-/**
- * Created by lembergIP on 04.11.2016.
- */
+
 @Component("userValidator")
 public class UserValidatorImpls implements UserValidator{
     @Autowired

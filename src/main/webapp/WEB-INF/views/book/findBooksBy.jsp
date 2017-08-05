@@ -95,12 +95,12 @@
 
                         <%--- - -- - - - -- - - -- - - -- - -- - --%>
                     <div class="panel-heading">
-                        <button type="button" class="close" id="deleteBook" data-toggle="modal" data-target="#deleteBook${book.id_book}">&times;</button>
+                        <button type="button" class="close" id="deleteBook" data-toggle="modal" data-target="#deleteBook${book.id}">&times;</button>
 
                         <strong>${book.author.fio} : </strong>
                             ${book.name} <p>${book.genre}</p>
                         <!-- Modal delete book content-->
-                        <div class="modal fade" id="deleteBook${book.id_book}" role="dialog">
+                        <div class="modal fade" id="deleteBook${book.id}" role="dialog">
                             <div class="modal-dialog">
 
                                 <!-- Modal delete book content-->
@@ -110,14 +110,14 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-default" data-dismiss="modal">Back</button>
-                                        <a href="adm-deleteBook${book.id_book}"><button type="button" class="btn btn-danger">Delete</button></a>
+                                        <a href="adm-deleteBook${book.id}"><button type="button" class="btn btn-danger">Delete</button></a>
                                     </div>
                                 </div>
 
                             </div>
                         </div>  <!--End Modal delete book content-->
                             <%--more info div--%>
-                        <div id="MoreInfo${book.id_book}" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog"  >
+                        <div id="MoreInfo${book.id}" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog"  >
                             <div class="modal-dialog modal-lg" role="document">
 
                                 <div class="modal-content">
@@ -128,7 +128,7 @@
                                     <div class="modal-body">
 
                                         <div id="Photo" class="container" >
-                                            <img class="img-thumbnail" id="BookPicture" alt="Book picture" src="imageBook/${book.id_book}" style="max-width: 100%; max-height: 100%" />
+                                            <img class="img-thumbnail" id="BookPicture" alt="Book picture" src="imageBook/${book.id}" style="max-width: 100%; max-height: 100%" />
                                         </div>
                                         <div id="BookInfo" class="container" >
                                             <ul>
@@ -145,8 +145,8 @@
                                         </div>
                                         <hr>
                                         <div class="btn-group btn-group-justified" id="btnMenu">
-                                            <a href="actionReadBook${book.id_book}" class="btn btn-primary">Read Book</a>
-                                            <a href="actionLoadBook${book.id_book}" class="btn btn-danger">Load Book</a>
+                                            <a href="actionReadBook${book.id}" class="btn btn-primary">Read Book</a>
+                                            <a href="actionLoadBook${book.id}" class="btn btn-danger">Load Book</a>
                                         </div>
                                     </div>
                                     <div class="modal-footer" style="clear: both">
@@ -158,10 +158,10 @@
                         </div>
                             <%-- end more info div--%>
                     </div>
-                    <div class="panel-body" id="panelBody" style="width: 250px; height:200px"><img src="imageBook/${book.id_book}" class="img-responsive" style="max-width: 100%; max-height: 100%" alt="Image"></div>
+                    <div class="panel-body" id="panelBody" style="width: 250px; height:200px"><img src="imageBook/${book.id}" class="img-responsive" style="max-width: 100%; max-height: 100%" alt="Image"></div>
                     <div class="panel-footer">
-                        <button class="btn btn-primary" data-toggle="modal" data-target="#MoreInfo${book.id_book}" style="font-family: cursive;">More Info</button>
-                        <a href="adm-editBook${book.id_book}"><button class="btn btn-primary" id="btnEditBook" style="font-family: cursive;">Edit Book</button></a>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#MoreInfo${book.id}" style="font-family: cursive;">More Info</button>
+                        <a href="adm-editBook${book.id}"><button class="btn btn-primary" id="btnEditBook" style="font-family: cursive;">Edit Book</button></a>
 
 
                     </div>

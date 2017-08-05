@@ -16,7 +16,7 @@ import java.io.OutputStream;
 import java.net.URLEncoder;
 
 /**
- * Created by lembergIP on 23.11.2016.
+ * @PathVariable action (load or read(only pdf format)) book by book id
  */
 @Controller
 @RequestMapping(value = "/action{action}Book{bookId}")
@@ -26,7 +26,8 @@ public class ReadLoadBookController {
     private BookService bookService;
 
     @RequestMapping(method = RequestMethod.GET)
-    public void loadOrReadBook(@PathVariable("action") String action,@PathVariable("bookId") long bookId, HttpServletResponse response, HttpServletRequest request ) throws IOException {
+    public void loadOrReadBook(@PathVariable("action") String action,@PathVariable("bookId") long bookId, HttpServletResponse response,
+                               HttpServletRequest request ) throws IOException {
         System.out.println("book : "+bookId+" ;action : "+action);
         response.setContentType("application/pdf; charset=UTF-8");
         OutputStream out = response.getOutputStream();

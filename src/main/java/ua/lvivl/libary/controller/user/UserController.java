@@ -14,7 +14,7 @@ import ua.lvivl.libary.service.UserService;
 import java.security.Principal;
 
 /**
- * Created by lembergIP on 25.10.2016.
+ * Home page and user account where user can update his info
  */
 @Controller
 @SessionAttributes({"user","principal","genreList","findBy","letter"})
