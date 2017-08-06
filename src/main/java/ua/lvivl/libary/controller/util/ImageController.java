@@ -11,9 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import ua.lvivl.libary.entity.Book;
 import ua.lvivl.libary.service.BookService;
 
-/**
- * Created by lembergIP on 15.11.2016.
- */
+
 @Controller
 public class ImageController {
 

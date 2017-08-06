@@ -134,7 +134,6 @@
         <li> <h4>Publisher :<strong> ${book.publisher.name }</strong></h4></li>
         <li><h4>Pages : <strong>${book.pageCount }</strong></h4></li>
         <li><h4>Year Public : <strong>${book.yearPublish }</strong></h4></li>
-        <li><h4>Size :<strong>${book.content}  MB</strong></h4></li>
 
     </ul>
 

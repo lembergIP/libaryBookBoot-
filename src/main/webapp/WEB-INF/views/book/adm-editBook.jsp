@@ -50,36 +50,35 @@
     <div class="col-sm-7" id="div2" >
 
         <form  action="adm-editBook${book.id}/updateBookInfo${book.id}" method="post">
-                <div class="form-group">
-                    <label for="name">BOOK NAME</label>
-                    <input class="form-control input-lg" type="text" id="name" name="name" value="${book.name}" required="required">
-                </div>
-                <div class="form-group">
-                    <label for="fio">AUTHOR</label>
-                    <input class="form-control input-lg" type="text" id="fio" name="fio" value=${book.author.fio} required="required">
-                </div>
-                <div class="form-group">
-                    <label for="ganre">SELECT GANRE BOOK</label>
-                    <select class="form-control" id="ganre" name="ganre">
-                        <c:forEach items="${genreList}" var="ganre">
+            <div class="form-group">
+                <label for="name">BOOK NAME</label>
+                <input class="form-control input-lg" type="text" id="name" name="name" value="${book.name}" required="required">
+            </div>
+            <div class="form-group">
+                <label for="fio">AUTHOR</label>
+                <input class="form-control input-lg" type="text" id="fio" name="fio" value=${book.author.fio} required="required">
+            </div>
+            <div class="form-group">
+                <label for="name">PUBLISHER</label>
+                <input class="form-control input-lg" type="text" id="publisher" name="publisher" value="${book.publisher.name}" required="required">
+            </div>
+            <div class="form-group">
+                <label for="name">PAGE COUNT</label>
+                <input class="form-control input-lg" type="number"  min="1" id="pageCount" name="pageCount" value="${book.pageCount}" required="required">
+            </div>
+            <div class="form-group">
+                <label for="fio">PUBLISH YEAR</label>
+                <input class="form-control input-lg" type="number" min="500" max="2100" id="publishYear" name="publishYear" value=${book.yearPublish} required="required">
+            </div>
+            <div class="form-group">
+                <label for="ganre">SELECT GANRE BOOK</label>
+                <select class="form-control" id="ganre" name="ganre">
+                    <c:forEach items="${genreList}" var="ganre">
 
-                            <option value="${ganre}">${ganre}</option>
+                        <option value="${ganre}">${ganre}</option>
 
-                        </c:forEach>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="publisher">PUBLISHER</label>
-                    <input class="form-control" type="text" id="publisher" name="publisher" value="${book.publisher.name } required="required"">
-                </div>
-                <div class="form-group">
-                    <label for="pageCount">PAGE COUNT</label>
-                    <input class="form-control" type="number" id="pageCount" name="pageCount" value="${book.pageCount } required="required"">
-                </div>
-                <div class="form-group">
-                    <label for="publishYear">PUBLISH YEAR</label>
-                    <input class="form-control" type="number" min="500" max="2100" id="publishYear" name="publishYear" value="${book.yearPublish } required="required"">
-                </div>
+                    </c:forEach>
+                </select></div>
             <hr>
             <button type="submit" class="btn btn-success" style="margin-top: 30px;margin-left: 200px">Update</button>
 
@@ -89,7 +88,6 @@
     <hr>
 <div class="container txt-center"><a href="allBooks"><button class="btn btn-primary"><span class="glyphicon glyphicon-chevron-left"></span>Back</button></a></div>
 </div>
-
 
 
 </body>
