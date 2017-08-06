@@ -30,3 +30,6 @@ login  :admin@mail.com  ; password : 123456;
 ![](src/main/webapp/resources/images/screenshots/deleteBook.jpg)
 # update
 ![](src/main/webapp/resources/images/screenshots/updateBook.jpg)
+
+# In more info button you can read or load book
+![](src/main/webapp/resources/images/screenshots/moreInfo.jpg)
