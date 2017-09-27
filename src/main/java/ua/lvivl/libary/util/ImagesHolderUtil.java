@@ -1,6 +1,6 @@
 package ua.lvivl.libary.util;
 
-import org.apache.commons.io.IOUtils;
+
 import org.apache.log4j.Logger;
 
 import javax.imageio.ImageIO;
@@ -8,8 +8,7 @@ import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
-import java.net.URL;
+
 
 /**
  * load default book image
