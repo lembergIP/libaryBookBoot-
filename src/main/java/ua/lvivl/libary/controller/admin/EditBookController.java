@@ -9,7 +9,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
-import ua.lvivl.libary.constants.BookConstans;
 import ua.lvivl.libary.entity.Author;
 import ua.lvivl.libary.entity.Book;
 import ua.lvivl.libary.entity.Genre;
@@ -35,7 +34,6 @@ public class EditBookController {
 
     @RequestMapping(method = RequestMethod.GET)
     public ModelAndView editBook(@PathVariable("bookId") long bookId){
-      //  Long id=Long.parseLong(idBook);
         ModelAndView model=new ModelAndView("book/adm-editBook");
         Book book=bookService.findBookById(bookId);
         model.addObject("book",book);

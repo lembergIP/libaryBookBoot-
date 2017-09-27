@@ -64,17 +64,6 @@ public class BookServiceImpls implements BookService {
     @Transactional
     public void createBook(Book book) {
 
-        File imgEmptyBook = new File("src/main/webapp/resources/images/books/emptyImage.png");
-        try (ByteArrayOutputStream baos = new ByteArrayOutputStream(1000)){
-            BufferedImage bufferedImage = ImageIO.read(imgEmptyBook);
-            ImageIO.write(bufferedImage, "jpg", baos);
-            baos.flush();
-        byte[]bytes=baos.toByteArray();
-            book.setImage(bytes);
-        }
-        catch (IOException ioe){
-
-        }
         bookRepository.save(book);
 
     }
